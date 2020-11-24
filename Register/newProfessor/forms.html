@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_blank">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Professor</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <style>
+      .disclaimer{width: 480px; color:#646464;margin:20px auto;padding:0 16px;text-align:center;font:400 12px Roboto,Helvetica,Arial,sans-serif}.disclaimer a{color:#009688}#credit{display:none}
+    </style>
+  </head>
+  <body>
+
+    <!-- Written by Rafael Brouzos rafail@learn-it.gr / rnm1816@gmail.com --> 
+
+    <form class="main" id="form" novalidate="novalidate" style="max-width: 480px;margin: 40px auto;">
+      <div id="forminner">
+        <div class="row">
+          <div class="col s12">
+            <h5 class="center-align teal-text">Εγγραφή Συνεργάτη</h5>
+            
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="name" type="text" name="Name" class="validate" required="" aria-required="true">
+            <label for="name">Ονοματεπώνυμο</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="phone" type="tel" name="Phone" class="validate" required="" aria-required="false">
+            <label for="phone">Σταθερό Τηλέφωνο</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="mobile" type="tel" name="Mobile" class="validate" required="" aria-required="false">
+            <label for="mobile">Κινητό Τηλέφωνο</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="email" type="email" name="Email" class="validate" required="" aria-required="true">
+            <label for="email">Email</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="skype" type="text" name="Skype" class="validate" required="" aria-required="false">
+            <label for="skype">Skypename</label>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="studies" type="text" name="Studies" class="validate" required="" aria-required="false">
+            <label for="studies">Βασικές Σπουδές</label>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="grade" type="text" name="Grade" class="validate" required="" aria-required="false">
+            <label for="grade">Βαθμός Πτυχίου</label>
+          </div>
+        </div>
+        
+         <div class="row">
+          <div class="input-field col s12">
+            <input id="master" type="text" name="Master" class="validate" required="" aria-required="false">
+            <label for="master">Μεταπτυχιακές Σπουδές</label>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="mastergrade" type="text" name="Mastergrade" class="validate" required="" aria-required="false">
+            <label for="mastergrade">Βαθμός Μεταπτυχιακού</label>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="phd" type="text" name="Phd" class="validate" required="" aria-required="false">
+            <label for="phd">Τίτλος Διδακτορικού</label>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="comment" type="text" name="Comment" class="validate" required="" aria-required="false">
+            <label for="comment">Σχόλια</label>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="exp" type="text" name="Exp" class="validate" required="" aria-required="false">
+            <label for="exp">Προϋπηρεσία στον κλάδο παροχής μαθημάτων</label>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="courses" type="text" name="Courses" class="validate" required="" aria-required="false">
+            <label for="courses">Μαθήματα που μπορείτε να αναλάβετε (χωρισμένα με κόμμα)</label>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="field" type = "text" list="fields" name="Field" class="validate" required="" aria-required="false">
+            <datalist id="fields">
+              <option value="Άλλο">
+              <option value="Αγγλική Φιλολογία">
+              <option value="Αγροτικής ανάπτυξης">
+              <option value="Αισθητική">
+              <option value="Αρχιτεκτονική">
+              <option value="ΑΣΟΕΕ">
+              <option value="Βαλκανικών Σπουδών">
+              <option value="Βιολογία">
+              <option value="Βιοτεχνολογία">
+              <option value="Γαλλική Φιλολογία">
+              <option value="Γερμανική Φιλολογία">
+              <option value="Γεωγραγία">
+              <option value="Γεωπληροφορική">
+              <option value="Γεωλογία">
+              <option value="Δασολογία">
+              <option value="Διατροφή">
+              <option value="Δομηκών έργων">
+              <option value="Επιστήμη της Θάλασσας">
+              <option value="Ευρωπαϊκών σπουδών">
+              <option value="Ηλεκτρολόγων">
+              <option value="Θεολόγων">
+              <option value="Ιατρική">
+              <option value="Ισπανική Φιλολογία">
+              <option value="Ιστορικό Αρχαιολογικό">
+              <option value="Ιταλική Φιλολογία">
+              <option value="Καλών Τεχνών">
+              <option value="Κοινωνικών επιστημών">
+              <option value="Κτηνιατρική">
+              <option value="Λογιστικά">
+              <option value="Μαθηματικό">
+              <option value="Μεταφραστικό">
+              <option value="Μηχανικών αυτοματισμών">
+              <option value="Μηχανικών οχημάτων">
+              <option value="Μηχανικών παραγωγής και διοίκησης">
+              <option value="Μηχανολόγων">
+              <option value="Μηχανικών περιβάλλοντος">
+              <option value="Οικονομικά">
+              <option value="Οργάνωση και διοίκηση επιχειρήσεων">
+              <option value="Πληροφορική">
+              <option value="Πολιτικών Μηχανικών">
+              <option value="Τοπογράφων">
+              <option value="Υλικά">
+              <option value="Φιλοσοφική">
+              <option value="Φυσικό">
+              <option value="Χημεία">
+              <option value="Ψυχολογία">
+            </datalist>
+            <label for="field">Επιστημονικό Πεδίο</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="city" type = "text" list="cities" name="City" class="validate" required="" aria-required="false">
+            <datalist id="cities">
+              <option value="Θεσσαλονίκη">
+              <option value="Αθήνα">
+              <option value="Ηράκλειο">
+              <option value="Καβάλα">
+              <option value="Κομοτηνή">
+              <option value="Λάρισα">
+              <option value="Σέρρες">
+              <option value="Ξάνθη">
+              <option value="Πάτρα">
+            </datalist>
+            <label for="city">Πόλη που μπορείτε να εξυπηρετήσετε δια ζώσης</label>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="file-field input-field col s12">
+            <div class="btn">
+              <span>Βιογραφικό</span>
+              <input id="files" type="file">
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text" placeholder="Επιλέξτε αρχείο (ένα αρχείο κάτω από 5MB)">
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="input-field col s6">
+            <button class="waves-effect waves-light btn submit-btn" type="submit" onclick="submitForm(); return false;">Submit</button>
+          </div>   
+        </div>
+        <div class="row">
+          <div class="input-field col s12" id = "progress">
+          </div>
+        </div>
+      </div>
+      <div id="success" style="display:none">
+        <h5 class="left-align teal-text">Ο συνεργάτης καταχωρήθηκε</h5>
+        <p>Η βάση δεδομένων ανανεώθηκε επιτυχώς.</p>
+      </div>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+    <script src="https://gumroad.com/js/gumroad.js"></script>
+
+    <script>
+
+       var file, 
+          reader = new FileReader();
+
+      reader.onloadend = function(e) {
+        if (e.target.error != null) {
+          showError("File " + file.name + " could not be read.");
+          return;
+        } else {
+        showMessage("Μεταφόρτωση του " + file.name + "...")
+        
+          google.script.run
+            .withSuccessHandler(showSuccess)
+            google.script.run.withSuccessHandler(showSuccess)
+             .addProfessorTodb($('input#name').val(), $('input#mobile').val(), $('input#phone').val(), $('input#email').val(),
+              $('input#skype').val(), $('input#field').val(), $('input#exp').val(), $('input#studies').val(), 
+              $('input#grade').val(), $('input#master').val(), $('input#mastergrade').val(), $('input#phd').val(),
+              $('input#courses').val(), $('input#comment').val(), $('input#city').val(), file.name, e.target.result);
+        }
+      };
+
+      function showSuccess(e) {
+        if (e === "OK") { 
+          $('#forminner').hide();
+          $('#success').show();
+        } else {
+          showError(e);
+        }
+      }
+
+      function submitForm() {
+          showMessage("Runing script..");
+          
+          var files = $('#files')[0].files;
+
+          if (files.length === 0) {
+            showError("Please select a file to upload");
+            return;
+          }
+  
+          file = files[0];
+  
+          if (file.size > 1024 * 1024 * 5) {
+            showError("The file size should be < 5 MB");
+            return;
+          }
+  
+          showMessage("Περιμένετε..");
+  
+          reader.readAsDataURL(file);
+  
+            
+
+      }
+
+      function showError(e) {
+        $('#progress').addClass('red-text').html(e);
+      }
+
+      function showMessage(e) {
+        $('#progress').removeClass('red-text').html(e);
+      }
+
+
+    </script>
+
+  </body>
+
+</html>

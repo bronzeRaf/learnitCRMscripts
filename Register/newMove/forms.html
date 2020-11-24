@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_blank">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Course</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <style>
+      .disclaimer{width: 480px; color:#646464;margin:20px auto;padding:0 16px;text-align:center;font:400 12px Roboto,Helvetica,Arial,sans-serif}.disclaimer a{color:#009688}#credit{display:none}
+    </style>
+  </head>
+  <body>
+
+    <!-- Written by Rafael Brouzos rafail@learn-it.gr / rnm1816@gmail.com --> 
+
+    <form class="main" id="form" novalidate="novalidate" style="max-width: 480px;margin: 40px auto;">
+      <div id="forminner">
+        <div class="row">
+          <div class="col s12">
+            <h5 class="center-align teal-text">Εισαγωγή Κίνησης</h5>
+            
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="name" type="text" name="Name" class="validate" required="" aria-required="true">
+            <label for="name">Ονοματεπώνυμο</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="ingoing" type="text" name="Ingoing" class="validate" required="" aria-required="false">
+            <label for="ingoing">Έσοδο</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="outgoing" type="text" name="Outgoing" class="validate" required="" aria-required="true">
+            <label for="outgoing">Έξοδο</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="apy" type="text" name="Apy" class="validate" required="" aria-required="false">
+            <label for="apy">ΑΠΥ</label>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="code" type="text" name="Code" class="validate" required="" aria-required="false">
+            <label for="code">Κωδικός καρτέλας</label>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="comment" type="text" name="Comment" class="validate" required="" aria-required="false">
+            <label for="comment">Σχόλια</label>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="type" type = "text" list="types" name="Type" class="validate" required="" aria-required="false">
+            <datalist id="types">
+              <option value="Σπουδαστής">
+              <option value="Μάθημα">
+              <option value="Τμήμα">
+              <option value="Εργασία">
+              <option value="Πάγια Έξοδα-Έσοδα">
+              <option value="Έκτακτα Έξοδα-Έσοδα">
+              <option value="Μισθοδοσία">
+              <option value="Franchise">
+            </datalist>
+            <label for="type">Είδος κίνησης</label>
+          </div>
+        </div>
+        
+        
+        
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="learnit" type = "text" list="learnits" name="Learnit" class="validate" required="" aria-required="false">
+            <datalist id="learnits">
+              <option value="Θεσσαλονίκη">
+              <option value="Θεσσαλονίκη Ανατολικά">
+              <option value="Αθήνα">
+              <option value="Ηράκλειο">
+              <option value="Καβάλα">
+              <option value="Κομοτηνή">
+              <option value="Λάρισα">
+              <option value="Σέρρες">
+              <option value="Ξάνθη">
+              <option value="Πάτρα">
+            </datalist>
+            <label for="learnit">Learn It</label>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="input-field col s6">
+            <button class="waves-effect waves-light btn submit-btn" type="submit" onclick="submitForm(); return false;">Submit</button>
+          </div>   
+        </div>
+        <div class="row">
+          <div class="input-field col s12" id = "progress">
+          </div>
+        </div>
+      </div>
+      <div id="success" style="display:none">
+        <h5 class="left-align teal-text">Η κίνηση καταχωρήθηκε</h5>
+        <p>Η βάση δεδομένων ανανεώθηκε επιτυχώς.</p>
+      </div>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+    <script src="https://gumroad.com/js/gumroad.js"></script>
+
+    <script>
+
+      
+
+      function showSuccess(e) {
+        if (e === "OK") { 
+          $('#forminner').hide();
+          $('#success').show();
+        } else {
+          showError(e);
+        }
+      }
+
+      function submitForm() {
+          showMessage("Runing script..");
+          
+          google.script.run.withSuccessHandler(showSuccess)
+           .addCourseTodb($('input#name').val(), $('input#ingoing').val(), $('input#outgoing').val(), 
+            $('input#apy').val(), $('input#code').val(), $('input#type').val(), $('input#comment').val(),  
+            $('input#learnit').val());
+      }
+      
+
+      function showError(e) {
+        $('#progress').addClass('red-text').html(e);
+      }
+
+      function showMessage(e) {
+        $('#progress').removeClass('red-text').html(e);
+      }
+
+
+    </script>
+
+  </body>
+
+</html>
